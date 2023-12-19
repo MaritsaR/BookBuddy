@@ -19,6 +19,7 @@ export default function Register({ setToken }) {
       password,
     };
     const nextToken = await registerUser(userObj);
+    localStorage.setItem("token", token);
     setToken(nextToken);
     navigate("/account");
   };

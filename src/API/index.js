@@ -52,3 +52,60 @@ export const getUser = async (token) => {
     console.error(err);
   }
 };
+
+export const getBooks = async () => {
+  try {
+    const rsp = await fetch(`${API_URL}/books`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const json = await rsp.json();
+    return json;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const getBookId = async (bookId) => {
+  try {
+    const rsp = await fetch(`${API_URL}/books/${bookId}`);
+    const json = await rsp.json();
+    return json;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const updateBookAvailability = async (id, available, token) => {
+  try {
+    const rsp = await fetch(`${API_URL}/books/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ available }),
+    });
+    const json = await rsp.json();
+    return json();
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const removeReservation = async (id, token) => {
+  try {
+    const rsp = await fetch(`${API_URL}/reservations/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const json = rsp.json();
+    return json;
+  } catch (err) {
+    console.error(err);
+  }
+};

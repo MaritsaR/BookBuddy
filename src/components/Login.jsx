@@ -14,6 +14,7 @@ export default function Login({ setToken }) {
       password,
     };
     const nextToken = await loginUser(userObj);
+    localStorage.setItem("token", token);
     setToken(nextToken);
     navigator("/account");
   };
