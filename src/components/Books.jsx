@@ -21,7 +21,6 @@ export default function Books() {
   console.log(books);
   return (
     <div className="cards">
-      <h1>All Books</h1>
       {books.map((book) => (
         <BookCards key={book.id} book={book} />
       ))}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { registerUser } from "../API";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Register({ setToken }) {
+export default function Register({ setToken, token }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,7 +26,8 @@ export default function Register({ setToken }) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="register" onSubmit={handleSubmit}>
+        <h2>Register!</h2>
         <label>
           First Name:
           <input

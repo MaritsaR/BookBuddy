@@ -4,7 +4,7 @@ export default function BookCards({ book }) {
   return (
     <div>
       <h2>{book?.title}</h2>
-      <img src={book?.coverimage} alt="" width="200"></img>
+      <img src={book?.coverimage} alt="books"></img>
       <h2>{book?.description}</h2>
       <h2>{book?.available}</h2>
       <div>

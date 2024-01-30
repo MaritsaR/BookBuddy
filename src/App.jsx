@@ -9,6 +9,7 @@ import SingleBook from "./components/SingleBook";
 import BookCards from "./components/BookCards";
 import { getUser } from "./API";
 import Navigations from "./components/Navigations";
+import "./index.css";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -38,7 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Books />} />
         <Route
-          path="/books/:id"
+          path="/book/:id"
           element={
             <SingleBook user={user} token={token} fetchUser={fetchUser} />
           }
@@ -47,8 +48,14 @@ function App() {
           path="/Account"
           element={<Account user={user} fetchUser={fetchUser} token={token} />}
         />
-        <Route path="/login" element={<Login setToken={setToken} />} />
-        <Route path="/Register" element={<Register setToken={setToken} />} />
+        <Route
+          path="/login"
+          element={<Login setToken={setToken} token={token} />}
+        />
+        <Route
+          path="/Register"
+          element={<Register setToken={setToken} token={token} />}
+        />
         {/* <Route path="/books" element={<Books />} />  */}
       </Routes>
     </>
