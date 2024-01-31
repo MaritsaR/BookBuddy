@@ -11,14 +11,13 @@ export default function Books() {
     async function loadBooks() {
       try {
         const results = await getBooks();
-        console.log(results);
         setBooks(results.books);
         return results;
       } catch (err) {}
     }
     loadBooks();
   }, []);
-  console.log(books);
+
   return (
     <div className="cards">
       {books.map((book) => (

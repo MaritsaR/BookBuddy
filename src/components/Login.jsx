@@ -21,7 +21,7 @@ export default function Login({ setToken, token }) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="login" onSubmit={handleSubmit}>
         <label>
           Email:
           <input
@@ -38,8 +38,10 @@ export default function Login({ setToken, token }) {
           />
         </label>
         <button>Login</button>
-        <Link to="/register">Don't have an account? Click here to sign in</Link>
       </form>
+      <div>
+        <Link to="/register">Don't have an account? Click here to sign in</Link>
+      </div>
     </>
   );
 }

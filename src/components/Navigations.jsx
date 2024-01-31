@@ -4,7 +4,7 @@ import "../index.css";
 
 export default function Navigations({ token, setToken, setUser }) {
   return (
-    <div id="nav-bar">
+    <div className="nav-bar">
       <Link to="/"> Home </Link>
       <Link to="/account"> Account </Link>
       <Link to="/login"> Login </Link>

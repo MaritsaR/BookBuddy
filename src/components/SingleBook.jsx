@@ -8,11 +8,12 @@ export default function SingleBook({ user, token, getUser }) {
   const [book, setBook] = useState(null);
   const { bookId } = useParams();
   //   const userBookTitles = user?.books.map((book) => book.title);
-
+  console.log(bookId);
   async function fetchBook() {
     try {
       const nextBook = await getBookId(bookId);
-      setBook(nextBook);
+      console.log(nextBook);
+      setBook(nextBook.book);
     } catch (err) {
       console.error(err);
     }

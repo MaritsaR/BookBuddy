@@ -39,7 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Books />} />
         <Route
-          path="/book/:id"
+          path="/book/:bookId"
           element={
             <SingleBook user={user} token={token} fetchUser={fetchUser} />
           }
